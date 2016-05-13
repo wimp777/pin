@@ -10,6 +10,9 @@ $brand-primary:                    #c0392b;
 $jumbotron-bg:                     white;
 $btn-primary-bg:                   #c0392b;
 $btn-primary-border:               #c0392b;
+$link-color:                       #c0392b;
+$link-hover-color:                 darken($link-color, 15%);
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
@@ -24,4 +27,8 @@ $btn-primary-border:               #c0392b;
 .nav-container {
   margin-left: 55px;
   margin-right: 55px;
+}
+
+.link-to-text-color {
+  color:#c0392b;
 }
