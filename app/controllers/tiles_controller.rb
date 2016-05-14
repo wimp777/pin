@@ -1,6 +1,7 @@
 class TilesController < ApplicationController
   before_action :set_tile, only: [:show, :edit, :update, :destroy]
-
+  before_action :correct_user, only: [:edit, :destroy, :update]
+  before_action :authenticate_user!, except: [:index]
   # GET /tiles
   # GET /tiles.json
   def index
@@ -14,7 +15,7 @@ class TilesController < ApplicationController
 
   # GET /tiles/new
   def new
-    @tile = Tile.new
+    @tile = current_user.tiles.build
   end
 
   # GET /tiles/1/edit
@@ -24,7 +25,7 @@ class TilesController < ApplicationController
   # POST /tiles
   # POST /tiles.json
   def create
-    @tile = Tile.new(tile_params)
+    @tile = current_user.tiles.build(tile_params)
 
     respond_to do |format|
       if @tile.save
@@ -65,6 +66,11 @@ class TilesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_tile
       @tile = Tile.find(params[:id])
+    end
+
+    def correct_user
+      @tile = current_user.tiles.find(id: params[:id])
+      redirect_to tiles_path, notice: "Not authorized to edit this tile" if @tile.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
