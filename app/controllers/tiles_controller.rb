@@ -1,7 +1,7 @@
 class TilesController < ApplicationController
   before_action :set_tile, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :destroy, :update]
-  before_action :authenticate_user!, except: [:index]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /tiles
   # GET /tiles.json
   def index
@@ -75,6 +75,6 @@ class TilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tile_params
-      params.require(:tile).permit(:description)
+      params.require(:tile).permit(:description, :image)
     end
 end
