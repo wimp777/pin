@@ -26,7 +26,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Devise
 gem 'devise'
 # Paperclip
-gem 'paperclip'
+gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
+
 # Amazon S3 image storage required for Heroku
 gem 'aws-sdk'
 
