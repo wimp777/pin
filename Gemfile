@@ -26,9 +26,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Devise
 gem 'devise'
 # Paperclip
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'paperclip'
 # Amazon S3 image storage required for Heroku
-gem 'aws-sdk', '~> 2.3', '>= 2.3.4'
+gem 'aws-sdk'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
