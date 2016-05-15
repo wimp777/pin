@@ -69,7 +69,7 @@ class TilesController < ApplicationController
     end
 
     def correct_user
-      @tile = current_user.tiles.find(id: params[:id])
+      @tile = current_user.tiles.find(params[:id])
       redirect_to tiles_path, notice: "Not authorized to edit this tile" if @tile.nil?
     end
 
