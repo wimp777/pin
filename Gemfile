@@ -32,7 +32,7 @@ gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523b
 # Amazon S3 image storage required for Heroku
 gem 'aws-sdk', '~> 2.0'
 # Masonry-rails for tiles
-gem 'masonry-rails'
+gem 'masonry-rails', '~> 0.2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
