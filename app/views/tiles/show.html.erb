@@ -9,11 +9,11 @@
       </div>
       <div class="panel-body">
         <p><%= @tile.description %></p>
-        <p><strong><%= @tile.user.email if @tile.user %></strong></p>
+        <p><strong><%= @tile.user.name if @tile.user %></strong></p>
 
         <% if @tile.user == current_user %>
            <%= link_to edit_tile_path(@tile) do %>
-             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit 
+             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
            <% end %>
         <% end %>
       </div>
