@@ -5,7 +5,7 @@ class TilesController < ApplicationController
   # GET /tiles
   # GET /tiles.json
   def index
-    @tiles = Tile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 6)
+    @tiles = Tile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
   end
 
   # GET /tiles/1
