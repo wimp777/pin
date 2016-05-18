@@ -5,7 +5,7 @@ class TilesController < ApplicationController
   # GET /tiles
   # GET /tiles.json
   def index
-    @tiles = Tile.all
+    @tiles = Tile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 6)
   end
 
   # GET /tiles/1
@@ -29,11 +29,11 @@ class TilesController < ApplicationController
 
     respond_to do |format|
       if @tile.save
-        format.html { redirect_to @tile, notice: 'Tile was successfully created.' }
-        format.json { render :show, status: :created, location: @tile }
+        format.html  {redirect_to @tile, notice: 'Tile was successfully created.'}
+
       else
-        format.html { render :new }
-        format.json { render json: @tile.errors, status: :unprocessable_entity }
+        format.html render :new
+
       end
     end
   end
