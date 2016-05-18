@@ -9,7 +9,7 @@
       <%= link_to image_tag(tile.image.url(:medium)), tile %>
       <div class="panel-body">
         <p><%= tile.description %></p>
-        <p><strong><%= tile.user.email if tile.user %></strong></p>
+        <p><strong><%= tile.user.name if tile.user %></strong></p>
 
         <% if current_user && tile.user == current_user %>
           <div class="actions">

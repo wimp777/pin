@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :tiles, dependent: :destroy
 
-  validates :password, :presence => true,
-                       :on => :create
+  validates :password, :name, :email, :presence => true
+
 end

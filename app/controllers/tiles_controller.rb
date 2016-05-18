@@ -30,7 +30,6 @@ class TilesController < ApplicationController
     respond_to do |format|
       if @tile.save
         format.html  {redirect_to @tile, notice: 'Tile was successfully created.'}
-
       else
         format.html render :new
 
